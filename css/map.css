@@ -14,7 +14,7 @@
 	width:auto;
 	height: auto;
 	color: rgb(3, 3, 3);
-	font-size: 8px;
+	font-size: 13px;
 	padding: 3px;
 	top: -10px;
 	left: -10px;
@@ -30,7 +30,7 @@
 	font-weight: bold;
 }
 
-/*#details  {
+#details  {
   margin-top: 2rem;
   float: right;
   overflow: hidden;
@@ -38,7 +38,7 @@
 #initial {
 	font-size: 1.2rem;
 	float: left;
-}*/
+}
 
 #legend {
 	border: 1px solid silver;

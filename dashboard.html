@@ -16,6 +16,7 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/map.css">
+    <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
 
     <style>
         .bd-placeholder-img {
@@ -31,7 +32,12 @@
                 font-size: 3.5rem;
             }
         }
-    </style>
+
+    .bar {
+        fill: steelblue;
+    }
+</style>
+
 
 
     <!-- Custom styles for this template -->
@@ -94,6 +100,30 @@
                                 Integrations
                             </a>
                         </li>-->
+                        <!--<li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="shopping-cart"></span>
+                                Products
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="users"></span>
+                                Customers
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="bar-chart-2"></span>
+                                Reports
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="layers"></span>
+                                Integrations
+                            </a>
+                        </li>-->
                     </ul>
 
                     <!--<h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
@@ -133,7 +163,7 @@
 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">MAP</h1>
+                    <h1 class="h2">Dashboard</h1>
                     <!--<div class="btn-toolbar mb-2 mb-md-0">
                         <div class="btn-group me-2">
                             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
@@ -146,68 +176,12 @@
                     </div>-->
                 </div>
 
-                
-                <div id="map">
-					<!-- Map container -->
-				</div>
-
-                <!-- Tooltip div -->
-				<div id="tooltip">
-					<p class="name" id="details"></p>
-					<p class="value"></p>
-				</div>
-
-                <script id="template" type="x-tmpl-mustache">
-					<h6>{{ district }} {{ total_votes }} voters</h6>
-	      <table class="table table-striped table-responsive">
-	        
-			<tr>
-	          <th> Yoweri Museveni:</th>
-	          <td>{{ museveni }} </td>
-	        </tr>
-			<tr>
-	          <th> Norbert Mao:</th>
-	          <td>{{ mao }} </td>
-	        </tr>
-			<tr>
-	          <th> Henry Tumukunde:</th>
-	          <td>{{ tumukunde }} </td>
-	        </tr>
-			<tr>
-	          <th> Fred Mwesigye:</th>
-	          <td>{{ mwesigye }} </td>
-	        </tr>
-			<tr>
-	          <th> Mugisha Muntu:</th>
-	          <td>{{ muntu }} </td>
-	        </tr>
-			<tr>
-	          <th> Willy Mayambala:</th>
-	          <td>{{ mayambala }} </td>
-	        </tr>
-			<tr>
-	          <th> Robert Kyagulanyi:</th>
-	          <td>{{ kyagulanyi }} </td>
-	        </tr>
-			<tr>
-	          <th> Nancy Kalembe:</th>
-	          <td>{{ kalembe }} </td>
-	        </tr>
-			<tr>
-	          <th> Katumba:</th>
-	          <td>{{ katumba }} </td>
-	        </tr>
-			<tr>
-	          <th> Patrick Amuriat:</th>
-	          <td>{{ amuriat }} </td>
-	        </tr>
-			<tr>
-	          <th> Joseph Kabuleta:</th>
-	          <td>{{ kabuleta }} </td>
-	        </tr>
-	      </table>	      
-	    </script>
-
+                <div class="row">
+                    <div class="col-md-12">
+                        <svg width="800" height="600"></svg>
+                    </div>
+                </div>
+             
             </main>
         </div>
     </div>
@@ -218,9 +192,10 @@
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
     <!--<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
     <script src="js/dashboard.js"></script>-->
-    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
-    <script src="js/map.js"></script>
+    
+    <script src="js/barchart.js"></script>
 </body>
 
 </html>

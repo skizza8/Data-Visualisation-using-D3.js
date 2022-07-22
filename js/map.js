@@ -82,8 +82,8 @@ var dataById = d3.map();
 //Colors by Cynthia Brewer (colorbrewer2.org), 9-class YlGnBu
 
 var color = d3.scale.quantize()
-	//.range(d3.range(9),map(function(i) { return 'q' + i + '-9';}));
-	.range(["#a50026",
+	/*.range(d3.range(9),map(function(i) { return 'q' + i + '-9';}));*/
+	/*.range(["#a50026",
 		"#d73027",
 		"#f46d43",
 		"#fdae61",
@@ -91,6 +91,12 @@ var color = d3.scale.quantize()
 		"#ffffbf",
 		"#d9ef8b",
 		"#a6d96a",
+		"#66bd63",
+		"#1a9850",
+		"#006837"]);*/
+		.range(["#a50026",
+		"#d73027",
+		"#f46d43",
 		"#66bd63",
 		"#1a9850",
 		"#006837"]);
@@ -214,14 +220,14 @@ function showDetails(f) {
 
 	console.log('d', d, 'event', window.event);
 	var div = document.getElementById('tooltip');
-	div.style.left = (window.event.pageX - 5) + 'px';
-	div.style.top = (window.event.pageY - 5) + 'px';
+	div.style.left = window.event.pageX + 'px';
+	div.style.top = window.event.pageY + 'px';
 	
 
 
 	//Fill yellow to highlight
 	d3.select(this)
-		.style("fill", "yellow");
+		.style("fill", "purple");
 
 	//Show the tooltip
 	d3.select("#tooltip")
