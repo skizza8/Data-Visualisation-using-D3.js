@@ -45,5 +45,5 @@ var svg = d3.select("svg"),
             svg.append("g")
                .attr("transform", "translate(" + (width / 2 - 120) + "," + 20 + ")")
                .append("text")
-               .text("Percentage Votes Per candidate")
+               //.text("Percentage Votes Per candidate")
                .attr("class", "title")

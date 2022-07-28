@@ -133,80 +133,38 @@
 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">MAP</h1>
-                    <!--<div class="btn-toolbar mb-2 mb-md-0">
-                        <div class="btn-group me-2">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-                        </div>
-                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                            <span data-feather="calendar"></span>
-                            This week
-                        </button>
+                    <h1 class="h2">Map</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0" id="filter_bar">
+                        <!--<div class="btn-group me-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="update('var1')">Var 1</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="update('var2')">Var 2</button>
+                        </div>-->
+                       <!-- <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                              Choose a District
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                              <li><a class="dropdown-item" href="#" onclick="update('var1')">A</a></li>
+                              <li><a class="dropdown-item" href="#" onclick="update('var2')">B</a></li>
+                              
+                            </ul>
+                          </div>-->
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Create a div where the graph will take place -->
+                    <div id="my_dataviz"></div>
+                    </div>
+                   <!-- <div class="col-md-6">
+                        <!- - Create a div where the graph will take place - ->
+                    <div id="piechart_turnout"></div>
                     </div>-->
                 </div>
 
                 
-                <div id="map">
-					<!-- Map container -->
-				</div>
-
-                <!-- Tooltip div -->
-				<div id="tooltip">
-					<p class="name" id="details"></p>
-					<p class="value"></p>
-				</div>
-
-                <script id="template" type="x-tmpl-mustache">
-					<h6>{{ district }} {{ total_votes }} voters</h6>
-	      <table class="table table-striped table-responsive">
-	        
-			<tr>
-	          <th> Yoweri Museveni:</th>
-	          <td>{{ museveni }} </td>
-	        </tr>
-			<tr>
-	          <th> Norbert Mao:</th>
-	          <td>{{ mao }} </td>
-	        </tr>
-			<tr>
-	          <th> Henry Tumukunde:</th>
-	          <td>{{ tumukunde }} </td>
-	        </tr>
-			<tr>
-	          <th> Fred Mwesigye:</th>
-	          <td>{{ mwesigye }} </td>
-	        </tr>
-			<tr>
-	          <th> Mugisha Muntu:</th>
-	          <td>{{ muntu }} </td>
-	        </tr>
-			<tr>
-	          <th> Willy Mayambala:</th>
-	          <td>{{ mayambala }} </td>
-	        </tr>
-			<tr>
-	          <th> Robert Kyagulanyi:</th>
-	          <td>{{ kyagulanyi }} </td>
-	        </tr>
-			<tr>
-	          <th> Nancy Kalembe:</th>
-	          <td>{{ kalembe }} </td>
-	        </tr>
-			<tr>
-	          <th> Katumba:</th>
-	          <td>{{ katumba }} </td>
-	        </tr>
-			<tr>
-	          <th> Patrick Amuriat:</th>
-	          <td>{{ amuriat }} </td>
-	        </tr>
-			<tr>
-	          <th> Joseph Kabuleta:</th>
-	          <td>{{ kabuleta }} </td>
-	        </tr>
-	      </table>	      
-	    </script>
+               
 
             </main>
         </div>
@@ -218,9 +176,12 @@
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
     <!--<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
     <script src="js/Barchart.js"></script>-->
-    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+    <!-- Color scale -->
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
-    <script src="js/map.js"></script>
+    <script src="js/bar_voters.js"></script>
+  <!-- <script src="js/pie_turnout.js"></script>-->
 </body>
 
 </html>

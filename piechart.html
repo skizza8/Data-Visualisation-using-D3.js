@@ -9,35 +9,14 @@
     <meta name="generator" content="Hugo 0.84.0">
     <title>UG Elections 2021</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/Barchart/">
 
 
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/map.css">
-    <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
-
     <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-
-        .bar {
-            fill: steelblue;
-        }
-
-
         .arc text {
             font: 10px sans-serif;
             text-anchor: middle;
@@ -53,6 +32,21 @@
         }
     </style>
 
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
 
 
     <!-- Custom styles for this template -->
@@ -63,9 +57,7 @@
 
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="index.html">MUK - UG Elections</a>
-        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
-            aria-label="Toggle navigation">
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
@@ -84,13 +76,13 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="index.html">
                                 <span data-feather="home"></span>
-                                MAP - UG Elections 2021
+                                Map
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="dashboard.html">
+                            <a class="nav-link" href="barchart.html">
                                 <span data-feather="file"></span>
-                                Dashboard
+                                Barchart
                             </a>
                         </li>
                         <li class="nav-item">
@@ -106,30 +98,6 @@
                             </a>
                         </li>
                         <!--<li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="bar-chart-2"></span>
-                                Reports
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="layers"></span>
-                                Integrations
-                            </a>
-                        </li>-->
-                        <!--<li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="shopping-cart"></span>
-                                Products
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="users"></span>
-                                Customers
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <span data-feather="bar-chart-2"></span>
                                 Reports
@@ -179,26 +147,39 @@
             </nav>
 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                <div
-                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Dashboard</h1>
-                    <!--<div class="btn-toolbar mb-2 mb-md-0">
-                        <div class="btn-group me-2">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-                        </div>
-                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                            <span data-feather="calendar"></span>
-                            This week
-                        </button>
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Map</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0" id="filter_bar">
+                        <!--<div class="btn-group me-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="update('var1')">Var 1</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="update('var2')">Var 2</button>
+                        </div>-->
+                       <!-- <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                              Choose a District
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                              <li><a class="dropdown-item" href="#" onclick="update('var1')">A</a></li>
+                              <li><a class="dropdown-item" href="#" onclick="update('var2')">B</a></li>
+                              
+                            </ul>
+                          </div>-->
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Create a div where the graph will take place -->
+                        <svg width="500" height="400"></svg>
+                    </div>
+                   <!-- <div class="col-md-6">
+                        <!- - Create a div where the graph will take place - ->
+                    <div id="piechart_turnout"></div>
                     </div>-->
                 </div>
 
-                <div class="row">
-                    <div class="col-md-12">
-                        <svg width="800" height="600"></svg>
-                    </div>
-                </div>
+                
+               
 
             </main>
         </div>
@@ -207,15 +188,15 @@
 
     <script src="js/bootstrap.bundle.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
-        integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
     <!--<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
-    <script src="js/dashboard.js"></script>-->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
-
-    <script src="js/piechart.js"></script>
+    <script src="js/Barchart.js"></script>-->
+    <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+    <!-- Color scale -->
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
+   
+  <script src="js/pie_turnout.js"></script>
 </body>
 
 </html>

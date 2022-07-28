@@ -83,7 +83,7 @@ var dataById = d3.map();
 
 var color = d3.scale.quantize()
 	/*.range(d3.range(9),map(function(i) { return 'q' + i + '-9';}));*/
-	/*.range(["#a50026",
+	.range(["#a50026",
 		"#d73027",
 		"#f46d43",
 		"#fdae61",
@@ -93,13 +93,8 @@ var color = d3.scale.quantize()
 		"#a6d96a",
 		"#66bd63",
 		"#1a9850",
-		"#006837"]);*/
-		.range(["#a50026",
-		"#d73027",
-		"#f46d43",
-		"#66bd63",
-		"#1a9850",
 		"#006837"]);
+	
 
 // Load in coverage score data
 //d3.csv("/map_data/coverage16_v3.csv", function (data) {
