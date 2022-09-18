@@ -17,6 +17,7 @@ var g = svg.append("g")
     .attr("transform", "translate(" + 100 + "," + 100 + ")");
 
 d3.csv("map_data/votes_overall.csv", function (error, data) {
+    console.log(data)
     if (error) {
         throw error;
     }
